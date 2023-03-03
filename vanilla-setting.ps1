@@ -11,6 +11,7 @@ Remove-Item "$env:TEMP\VSCodeSetup.exe"
 # Firefox 설치
 Invoke-WebRequest "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=ko" -OutFile "$env:TEMP\FirefoxInstaller.exe"
 Start-Process "$env:TEMP\FirefoxInstaller.exe" -ArgumentList '/S' -Wait
+Remove-Item "$env:TEMP\FirefoxInstaller.exe"
 
 # 카카오톡 설치
 Invoke-WebRequest -Uri "https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe" -OutFile "$env:TEMP\KakaoTalk_Setup.exe"
