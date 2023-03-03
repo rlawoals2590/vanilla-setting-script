@@ -26,4 +26,4 @@ Remove-Item $puttyInstallerPath
 # Notion 설치
 Invoke-WebRequest -Uri "https://www.notion.so/desktop/windows/download" -OutFile "$env:TEMP\notion-installer.exe"
 Start-Process -FilePath "$env:TEMP\notion-installer.exe" -ArgumentList '/VERYSILENT', '/NORESTART', '/S' -Wait
-Remove-Item "$env:TEMP\notion-installer.exe"`
+Remove-Item "$env:TEMP\notion-installer.exe"
