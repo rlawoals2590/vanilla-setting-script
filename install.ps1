@@ -9,10 +9,8 @@ Start-Process -FilePath "$env:TEMP\VSCodeSetup.exe" -ArgumentList '/VERYSILENT',
 Remove-Item "$env:TEMP\VSCodeSetup.exe"
 
 # Firefox 설치
-$firefoxUrl = "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=ko"
-$firefoxInstaller = "$env:TEMP\FirefoxInstaller.exe"
-Invoke-WebRequest $firefoxUrl -OutFile $firefoxInstaller
-Start-Process $firefoxInstaller -ArgumentList '/S' -Wait
+Invoke-WebRequest "https://download.mozilla.org/?product=firefox-latest-ssl&os=win64&lang=ko" -OutFile "$env:TEMP\FirefoxInstaller.exe"
+Start-Process "$env:TEMP\FirefoxInstaller.exe" -ArgumentList '/S' -Wait
 
 # 카카오톡 설치
 Invoke-WebRequest -Uri "https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe" -OutFile "$env:TEMP\KakaoTalk_Setup.exe"
@@ -20,10 +18,8 @@ Start-Process -FilePath "$env:TEMP\KakaoTalk_Setup.exe" -ArgumentList '/VERYSILE
 Remove-Item "$env:TEMP\KakaoTalk_Setup.exe"
 
 # PuTTY 설치
-$puttyUrl = "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi"
-$puttyInstallerPath = "$env:TEMP\putty-64bit-0.78-installer.msi"
-Invoke-WebRequest -Uri $puttyUrl -OutFile $puttyInstallerPath
-Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$puttyInstallerPath`" /quiet /norestart" -Wait
+Invoke-WebRequest -Uri "https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.78-installer.msi" -OutFile "$env:TEMP\putty-64bit-0.78-installer.msi"
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `""$env:TEMP\putty-64bit-0.78-installer.msi"`" /quiet /norestart" -Wait
 Remove-Item $puttyInstallerPath
 
 # Notion 설치
