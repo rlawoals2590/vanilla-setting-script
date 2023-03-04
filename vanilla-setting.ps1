@@ -41,4 +41,10 @@ Start-Process -FilePath "$env:TEMP\notion-installer.exe" -ArgumentList '/VERYSIL
 Remove-Item "$env:TEMP\notion-installer.exe"
 }
 
+Start-Job -name "golang installing" -ScriptBlock {
+Invoke-WebRequest -Uri "https://go.dev/dl/go1.20.1.windows-amd64.msi" -OutFile "$env:TEMP\go.msi"
+Start-Process -FilePath msiexec.exe -ArgumentList "/i `"$env:TEMP\go.msi`" /quiet /norestart" -Wait
+Remove-Item "$env:TEMP\go.msi"
+}
+
 Write-Output "Job Creating Complete. if you want watch job process, you can see using 'Get-job'"
