@@ -14,7 +14,7 @@ Invoke-WebRequest "https://raw.githubusercontent.com/YoonHyunWoo/vanilla-setting
 
 # Trouble Shooting
 
-* Invoke-WebRequest : 요청이 중단되었습니다. SSL/TLS 보안 채널을 만들 수 없습니다.
+* ERRPR - Invoke-WebRequest : 요청이 중단되었습니다. SSL/TLS 보안 채널을 만들 수 없습니다.
 
 
   ```
