@@ -47,4 +47,10 @@ Start-Process -FilePath msiexec.exe -ArgumentList "/i `"$env:TEMP\go.msi`" /quie
 Remove-Item "$env:TEMP\go.msi"
 }
 
+Start-Job -name "AWS CLI 2 installing" -ScriptBlock {
+Invoke-WebRequest -Uri "https://awscli.amazonaws.com/AWSCLIV2.msi" -OutFile "$env:TEMP\AWSCLIV2.msi"
+Start-Process -FilePath msiexec.exe -ArgumentList "/i `"$env:TEMP\AWSCLIV2.msi`" /quiet /norestart" -Wait
+Remove-Item AWSCLIV2.msi
+}
+
 Write-Output "Job Creating Complete. if you want watch job process, you can see using 'Get-job'"
