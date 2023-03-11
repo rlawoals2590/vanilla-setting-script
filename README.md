@@ -14,7 +14,7 @@ Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-settin
 
 config aws cli 2 
 ```
-Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-setting-script/master/awscli-config.ps1" -OutFile "vanilla-setting.ps1"
+Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-setting-script/master/awscli-config.ps1" -OutFile "awscli-config.ps1"
 .\awscli-config.ps1
 ```
 
