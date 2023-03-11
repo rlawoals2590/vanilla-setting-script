@@ -53,23 +53,4 @@ Start-Process -FilePath msiexec.exe -ArgumentList "/i `"$env:TEMP\AWSCLIV2.msi`"
 Remove-Item AWSCLIV2.msi
 }
 
-Start-Job -name "AWS CLI Config" -ScriptBlock {
-$access_key = Read-Host "Input Youre AWS Access Key "
-$secret_key = Read-Host "Input Youre AWS Secret Key "
-
-$filePath = "C:\Program Files\Amazon\AWSCLIV2\config.ps1"
-$awsPath = "C:\Program Files\Amazon\AWSCLIV2\aws"
-
-New-Item -ItemType File -Path $filePath -Force
-Add-Content -Path $filePath -Value "# AWS Account Login"
-Add-Content -Path $filePath -Value "& '$awsPath' configure set aws_access_key_id your_access_key"
-Add-Content -Path $filePath -Value "& '$awsPath' configure set aws_secret_access_key your_secret_key"
-Add-Content -Path $filePath -Value "& '$awsPath' configure set region ap-northeast-2"
-
-(Get-Content $filePath) | Foreach-Object { $_ -replace "your_access_key", "$access_key" } | Out-File $filePath
-(Get-Content $filePath) | Foreach-Object { $_ -replace "your_secret_key", "$secret_key" } | Out-File $filePath
-
-& 'C:\Program Files\Amazon\AWSCLIV2\config.ps1'
-}
-
 Write-Output "Job Creating Complete. if you want watch job process, you can see using 'Get-job'"
