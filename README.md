@@ -12,6 +12,12 @@ Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-settin
 .\vanilla-setting.ps1
 ```
 
+config aws cli 2 
+```
+Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-setting-script/master/awscli-config.ps1" -OutFile "vanilla-setting.ps1"
+.\awscli-config.ps1
+```
+
 # Trouble Shooting
 
 * ERROR - Invoke-WebRequest : 요청이 중단되었습니다. SSL/TLS 보안 채널을 만들 수 없습니다.
