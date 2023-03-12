@@ -22,6 +22,8 @@ Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-settin
 Input Youre AWS Access Key : Your_Access_key
 Input Youre AWS Secret Key : Your_Secret_Key
 Input Youre Use AWS Region : Your_Region
+
+defalut region : us-west-2
 ```
 
 
