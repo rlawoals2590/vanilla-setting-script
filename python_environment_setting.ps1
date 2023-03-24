@@ -7,7 +7,7 @@ Start-Process $PythonExe -ArgumentList $ArgumentList
 Remove-Item $PythonExe
 }
 
-Start-Job -name "Running jupyter notebook  -ScriptBlock" {
+Start-Job -name "Running jupyter notebook"  -ScriptBlock {
 $AnacondaPath = "C:\ProgramData\anaconda3"
 $AnacondaLibraryPath = "C:\ProgramData\anaconda3\Library"
 $AnacondaScriptsPath = "C:\ProgramData\anaconda3\Scripts"
