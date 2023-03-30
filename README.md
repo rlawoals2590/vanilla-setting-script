@@ -8,13 +8,13 @@ Set-ExecutionPolicy Unrestricted
 
 ### running script
 ```
-Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-setting-script/master/vanilla-setting.ps1" -OutFile "vanilla-setting.ps1"
+Invoke-WebRequest "https://raw.githubusercontent.com/YoonHyunWoo/vanilla-setting-script/master/vanilla-setting.ps1" -OutFile "vanilla-setting.ps1"
 .\vanilla-setting.ps1
 ```
 
 ### config aws cli 2 
 ```
-Invoke-WebRequest "https://raw.githubusercontent.com/rlawoals2590/vanilla-setting-script/master/awscli-config.ps1" -OutFile "awscli-config.ps1"
+Invoke-WebRequest "https://raw.githubusercontent.com/YoonHyunWoo/vanilla-setting-script/master/awscli-config.ps1" -OutFile "awscli-config.ps1"
 .\awscli-config.ps1
 ```
 #### input your Access Key & Secret Access Key & Region
